@@ -14,14 +14,17 @@ steps:
 # Download and cache dependencies
  - restore_cache:
 key: spring5-recipe-app-{‌{ checksum "pom.xml" }}
- - run: mvn install -DskipTests
- - run: mvn dependency:go-offline
+ - run: 
+  - mvn install -DskipTests
+ - run: 
+  - mvn dependency:go-offline
  - save_cache:
 paths:
- - ~/.m2
+ - /home/sal/.m2
 key: spring5-recipe-app-{‌{ checksum "pom.xml" }}
 # run tests!
- - run: mvn package
+ - run: 
+  - mvn package
  - store_test_results:
 path: target/surefire-reports
  - store_artifacts:

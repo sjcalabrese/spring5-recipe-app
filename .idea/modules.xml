@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/spring5-recipe-app.iml" filepath="$PROJECT_DIR$/.idea/spring5-recipe-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5-recipe-app/spring5-recipe-app.iml" filepath="$PROJECT_DIR$/spring5-recipe-app/spring5-recipe-app.iml" />
     </modules>
   </component>
 </project>
