@@ -10,7 +10,7 @@ jobs:
       - image: circleci/openjdk:8-jdk
  
  
-    working_directory: ~sal/IdeaProjects/spring5-recipe-app
+    working_directory: ~/repo
  
     environment:
       # Customize the JVM maximum heap limit
