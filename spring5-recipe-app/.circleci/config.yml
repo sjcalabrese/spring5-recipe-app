@@ -10,7 +10,7 @@ jobs:
       - image: circleci/openjdk:11-jdk-browsers-legacy
  
  
-    working_directory: ~/repo
+    working_directory: ~/spring5-recipe-app
  
     environment:
       # Customize the JVM maximum heap limit
@@ -22,7 +22,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{‌{ checksum "pom.xml" }}
+          - spring5-ricipe-app-{‌{ checksum "pom.xml" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
  
@@ -31,7 +31,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          key: v1-dependencies-{‌{ checksum "pom.xml" }}
+          key: spring5-recipe-app-{‌{ checksum "pom.xml" }}
  
       # run tests! and gen code coverage
       - run: mvn integration-test cobertura:cobertura
