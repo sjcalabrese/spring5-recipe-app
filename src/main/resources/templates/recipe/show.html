@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Recipe</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="" rel="stylesheet"
+          th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"
+    />
+
+    <script src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script crossorigin="anonymous"
+            integrity=""
+            src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid" style="...">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div>
+                <div class="card bg-light border-dark">
+                    <div class="card-header">
+                        <h1 class="card-title" th:text="${recipe.description}">Recipe Description Here</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Categories</h5>
+                            </div>
+                            <div class="col-md-9">
+                                <ul>
+                                    <li>cat one</li>
+                                    <li>cat two</li>
+                                    <li>cat three</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Prep Time</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p>30 min</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>Difficulty</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p>easy</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Cooktime</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p>30 min</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>URL: </h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p>http://www.example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-light border-dark">
+                    <div class="card-header">
+                        <h1 class="card-title">
+                            Ingredients
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul>
+                                    <li>1 Cup of Milk</li>
+                                    <li>1 Teaspoon of Chocolate</li>
+                                    <li>1 Teaspoon of Sugar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-light border-dark">
+                    <div class="card-header">
+                        <h1 class="card-title">Directions</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus nulla sit amet
+                                    nunc molestie, nec dictum tellus vehicula. In commodo rhoncus egestas. Duis
+                                    venenatis sem at viverra vehicula. Sed tristique magna ac velit iaculis tristique.
+                                    Maecenas quis faucibus mauris. Sed placerat lacinia volutpat. Vivamus pellentesque
+                                    leo sit amet odio condimentum dignissim. Pellentesque habitant morbi tristique
+                                    senectus et netus et malesuada fames ac turpis egestas. Nunc vehicula, nisi eget
+                                    posuere faucibus, sapien odio elementum orci, non fermentum magna tellus sit amet
+                                    dolor. In vitae pellentesque sapien. Etiam auctor in urna porta dictum. Quisque at
+                                    porta erat. Fusce auctor lacinia accumsan. Sed ligula eros, eleifend a nisi vitae,
+                                    pellentesque euismod orci.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-light border-dark">
+                    <div class="card-header">
+                        <h1 class="card-title">Notes</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus nulla sit amet
+                                    nunc molestie, nec dictum tellus vehicula. In commodo rhoncus egestas. Duis
+                                    venenatis sem at viverra vehicula. Sed tristique magna ac velit iaculis tristique.
+                                    Maecenas quis faucibus mauris. Sed placerat lacinia volutpat. Vivamus pellentesque
+                                    leo sit amet odio condimentum dignissim. Pellentesque habitant morbi tristique
+                                    senectus et netus et malesuada fames ac turpis egestas. Nunc vehicula, nisi eget
+                                    posuere faucibus, sapien odio elementum orci, non fermentum magna tellus sit amet
+                                    dolor. In vitae pellentesque sapien. Etiam auctor in urna porta dictum. Quisque at
+                                    porta erat. Fusce auctor lacinia accumsan. Sed ligula eros, eleifend a nisi vitae,
+                                    pellentesque euismod orci.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
