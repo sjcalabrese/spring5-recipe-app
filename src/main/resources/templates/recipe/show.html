@@ -27,6 +27,7 @@
             <div>
                 <div class="card bg-light border-dark">
                     <div class="card-header">
+                        <!-- /*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                         <h1 class="card-title" th:text="${recipe.description}">Recipe Description Here</h1>
                     </div>
                     <div class="card-body">
@@ -36,9 +37,11 @@
                             </div>
                             <div class="col-md-9">
                                 <ul>
-                                    <li>cat one</li>
-                                    <li>cat two</li>
-                                    <li>cat three</li>
+                                    <li th:remove="all">cat one</li>
+                                    <li th:remove="all">cat two</li>
+                                    <!-- /*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
+                                    <li th:each="category : ${recipe.categories}"
+                                    th:text="${category.getDescription()}">cat three</li>
                                 </ul>
                             </div>
                         </div>
@@ -47,13 +50,13 @@
                                 <h5>Prep Time</h5>
                             </div>
                             <div class="col-md-3">
-                                <p>30 min</p>
+                                <p th:text="${recipe.prepTime} + ' min'">30 m</p>
                             </div>
                             <div class="col-md-3">
                                 <h5>Difficulty</h5>
                             </div>
                             <div class="col-md-3">
-                                <p>easy</p>
+                                <p th:text="${recipe.difficulty}">easy</p>
                             </div>
                         </div>
                         <div class="row">
@@ -61,13 +64,13 @@
                                 <h5>Cooktime</h5>
                             </div>
                             <div class="col-md-3">
-                                <p>30 min</p>
+                                <p th:text="${recipe.cookTime} + ' min'">30 m</p>
                             </div>
                             <div class="col-md-3">
                                 <h5>URL: </h5>
                             </div>
                             <div class="col-md-3">
-                                <p>http://www.example.com</p>
+                                <p th:text="${recipe.url}">http://www.example.com</p>
                             </div>
                         </div>
                     </div>
@@ -82,9 +85,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <ul>
-                                    <li>1 Cup of Milk</li>
-                                    <li>1 Teaspoon of Chocolate</li>
-                                    <li>1 Teaspoon of Sugar</li>
+                                    <li th:remove>1 Cup of Milk</li>
+                                    <li th:remove>1 Teaspoon of Chocolate</li>
+                                    <li th:each="ingredient : ${recipe.ingredients}"
+                                        th:text="${(ingredient.getAmount() + ' ' +
+                                         ingredient.uom.getUom() + ' -' +
+                                         ingredient.getDescription())}">1 Teaspoon of Sugar</li>
                                 </ul>
                             </div>
                         </div>
@@ -97,7 +103,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus nulla sit amet
+                                <p th:text="${recipe.directions}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus nulla sit amet
                                     nunc molestie, nec dictum tellus vehicula. In commodo rhoncus egestas. Duis
                                     venenatis sem at viverra vehicula. Sed tristique magna ac velit iaculis tristique.
                                     Maecenas quis faucibus mauris. Sed placerat lacinia volutpat. Vivamus pellentesque
@@ -118,7 +124,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus nulla sit amet
+                                <p th:text="${recipe.notes.recipeNotes}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus nulla sit amet
                                     nunc molestie, nec dictum tellus vehicula. In commodo rhoncus egestas. Duis
                                     venenatis sem at viverra vehicula. Sed tristique magna ac velit iaculis tristique.
                                     Maecenas quis faucibus mauris. Sed placerat lacinia volutpat. Vivamus pellentesque

@@ -17,6 +17,14 @@ public class UnitOfMeasure {
 
     private String uom;
 
+    public String getUom() {
+        return uom;
+    }
+
+    public void setUom(String uom) {
+        this.uom = uom;
+    }
+
     public Long getId() {
         return Id;
     }
@@ -24,5 +32,6 @@ public class UnitOfMeasure {
     public void setId(Long id) {
         Id = id;
     }
+
 
 }
