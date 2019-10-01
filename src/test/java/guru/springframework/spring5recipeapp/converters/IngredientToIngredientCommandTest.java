@@ -22,7 +22,7 @@ class IngredientToIngredientCommandTest {
 
     IngredientToIngredientCommand converter;
 
-    @Before
+    @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
         converter = new IngredientToIngredientCommand(new UnitOfMeasureToUnitOfMeasureCommand());
     }
@@ -37,7 +37,7 @@ class IngredientToIngredientCommandTest {
         assertNotNull(converter.convert(new Ingredient()));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void testConvertNullUOM() throws Exception {
         //given
         Ingredient ingredient = new Ingredient();
@@ -56,7 +56,7 @@ class IngredientToIngredientCommandTest {
         assertEquals(DESCRIPTION, ingredientCommand.getDescription());
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void testConvertWithUom() throws Exception {
         //given
         Ingredient ingredient = new Ingredient();

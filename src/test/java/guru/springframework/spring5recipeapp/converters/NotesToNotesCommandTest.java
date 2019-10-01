@@ -13,12 +13,12 @@ class NotesToNotesCommandTest {
     public static final String RECIPE_NOTES = "Notes";
     NotesToNotesCommand converter;
 
-    @Before
+    @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
         converter = new NotesToNotesCommand();
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void convert() throws Exception {
         //given
         Notes notes = new Notes();

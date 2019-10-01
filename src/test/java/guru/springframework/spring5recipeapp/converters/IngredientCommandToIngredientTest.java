@@ -21,7 +21,7 @@ class IngredientCommandToIngredientTest {
 
     IngredientCommandToIngredient converter;
 
-    @Before
+    @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
         converter = new IngredientCommandToIngredient(new UnitOfMeasureCommandToUnitOfMeasure());
     }

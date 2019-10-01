@@ -23,9 +23,10 @@ class RecipeToRecipeCommandTest {
     public static final Long INGRED_ID_1 = 3L;
     public static final Long INGRED_ID_2 = 4L;
     public static final Long NOTES_ID = 9L;
+
     RecipeToRecipeCommand converter;
 
-    @Before
+    @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
         converter = new RecipeToRecipeCommand(
                 new CategoryToCategoryCommand(),
@@ -43,7 +44,7 @@ class RecipeToRecipeCommandTest {
         assertNotNull(converter.convert(new Recipe()));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void convert() throws Exception {
         //given
         Recipe recipe = new Recipe();

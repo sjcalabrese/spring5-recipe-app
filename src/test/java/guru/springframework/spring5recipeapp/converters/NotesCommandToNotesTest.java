@@ -13,7 +13,7 @@ class NotesCommandToNotesTest {
     public static final String RECIPE_NOTES = "Notes";
     NotesCommandToNotes converter;
 
-    @Before
+    @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
         converter = new NotesCommandToNotes();
 
@@ -29,7 +29,7 @@ class NotesCommandToNotesTest {
         assertNotNull(converter.convert(new NotesCommand()));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void convert() throws Exception {
         //given
         NotesCommand notesCommand = new NotesCommand();

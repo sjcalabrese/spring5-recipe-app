@@ -13,7 +13,7 @@ class CategoryToCategoryCommandTest {
     public static final String DESCRIPTION = "descript";
     CategoryToCategoryCommand convter;
 
-    @Before
+    @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
         convter = new CategoryToCategoryCommand();
     }

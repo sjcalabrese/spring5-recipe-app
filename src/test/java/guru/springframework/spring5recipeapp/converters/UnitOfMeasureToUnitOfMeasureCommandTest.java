@@ -14,7 +14,7 @@ class UnitOfMeasureToUnitOfMeasureCommandTest {
 
     UnitOfMeasureToUnitOfMeasureCommand converter;
 
-    @Before
+    @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
         converter = new UnitOfMeasureToUnitOfMeasureCommand();
     }
@@ -29,7 +29,7 @@ class UnitOfMeasureToUnitOfMeasureCommandTest {
         assertNotNull(converter.convert(new UnitOfMeasure()));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void convert() throws Exception {
         //given
         UnitOfMeasure uom = new UnitOfMeasure();
