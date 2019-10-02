@@ -20,6 +20,7 @@
             th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
 </head>
 <body>
+<!-- /*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
 <div class="container-fluid" style="...">
     <div class="row">
         <div class="col-md-2"></div>
@@ -27,7 +28,7 @@
             <div>
                 <div class="card bg-light border-dark">
                     <div class="card-header">
-                        <!-- /*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
+
                         <h1 class="card-title" th:text="${recipe.description}">Recipe Description Here</h1>
                     </div>
                     <div class="card-body">
