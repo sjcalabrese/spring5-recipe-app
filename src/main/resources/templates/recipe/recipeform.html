@@ -20,12 +20,12 @@
 </head>
 <body>
 <!-- /*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
-<div class="container-fluid" style="...">
+<div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <form method="post" th:action="@{/recipe/}" th:object="${recipe}">
-                <input th:field="*{id}" type="hidden"/>
+            <form th:object="${recipe}" th:action="@{/recipe/}" method="post">
+                <input type="hidden" th:field="*{id}"/>
                 <div class="card bg-light">
                     <div class="card-header">
                         <h1 class="card-title">Edit Recipe Information</h1>
@@ -109,7 +109,7 @@
                                     <li th:remove="all">1 Teaspoon of chocolate</li>
                                     <li th:each="ingredient : ${recipe.ingredients}"
                                         th:text="${(ingredient.getAmount() +
-                                        ' ' + ingredient.uom.getDescription() +
+                                        ' ' + ingredient.uom.getUom() +
                                         ' - ' + ingredient.getDescription())}">1 Teaspoon of Sugar
                                     </li>
                                 </ul>
