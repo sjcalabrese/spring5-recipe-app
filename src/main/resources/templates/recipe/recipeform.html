@@ -24,8 +24,8 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <form th:object="${recipe}" th:action="@{/recipe/}" method="post">
-                <input type="hidden" th:field="*{id}"/>
+            <form method="post" th:action="@{/recipe/}" th:object="${recipe}">
+                <input th:field="*{id}" type="hidden"/>
                 <div class="card bg-light">
                     <div class="card-header">
                         <h1 class="card-title">Edit Recipe Information</h1>
@@ -67,10 +67,14 @@
                             </div>
                             <div class="col-md-3 form-group">
                                 <label>Difficulty:</label>
-                                <select class="form-control">
-                                    <option>Easy</option>
-                                    <option>Medium</option>
-                                    <option>Hard</option>
+                                <select class="form-control" th:field="*{difficulty}" type="text">
+                                    <option th:each="difficultyValue : ${T(guru.springframework.spring5recipeapp.domain.Difficulty).values()}"
+                                            th:text="${difficultyValue.name()}"
+                                            th:value="${difficultyValue.name()}">val
+                                    </option>
+<!--                                    <option>Easy</option>-->
+<!--                                    <option>Medium</option>-->
+<!--                                    <option>Hard</option>-->
                                 </select>
                             </div>
                         </div>

@@ -3,7 +3,7 @@ package guru.springframework.spring5recipeapp.converters;
 import guru.springframework.spring5recipeapp.commands.UnitOfMeasureCommand;
 import guru.springframework.spring5recipeapp.domain.UnitOfMeasure;
 import org.junit.Test;
-import sun.security.x509.OtherName;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
