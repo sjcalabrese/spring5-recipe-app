@@ -33,7 +33,7 @@ public class Recipe {
     //enters as a blob.
     //@lob = large object
     @Lob
-    private byte[] image;
+    private Byte[] image;
 
     //String value is better to use because if you change anything in the
     //enum class the value will change from one number to the next if used by number
