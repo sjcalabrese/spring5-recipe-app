@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+//needs to implement application Listener to run as a bootstrap
 @Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
@@ -138,7 +139,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvoun5ws");
 
         //needed for bi-directional relationship
-        //added relationship in Recipe domain
+        //added relationship in Recipe domain by adding logic in setNote method
        /* guacNotes.setRecipe(guacRecipe);*/
         guacRecipe.setNotes(guacNotes);
 

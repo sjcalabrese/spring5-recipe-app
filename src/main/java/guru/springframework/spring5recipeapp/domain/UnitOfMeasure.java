@@ -33,7 +33,4 @@ public class UnitOfMeasure {
         Id = id;
     }
 
-
-    public void setDescription(String description) {
-    }
 }

@@ -15,6 +15,7 @@ public class Category {
     private Long id;
     private String description;
 
+    //categories is in the recipe domain
     @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes;
 

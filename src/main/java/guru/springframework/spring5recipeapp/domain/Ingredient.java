@@ -19,6 +19,7 @@ public class Ingredient {
     @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMeasure uom;
 
+    //Not going to use cascade here to prevent deleting parent when deleting an ingredient
     @ManyToOne
     private Recipe recipe;
 
