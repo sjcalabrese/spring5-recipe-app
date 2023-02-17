@@ -12,6 +12,7 @@ import java.util.Optional;
 
 import static org.junit.Assert.*;
 
+//These annotations are allowing us to run integration test
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class UnitOfMeasureRepositoryIT {

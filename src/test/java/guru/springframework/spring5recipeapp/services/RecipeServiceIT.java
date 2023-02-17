@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.Assert.assertEquals;
 
+//fails if using @DataJpaTest, so need to use @SpringBootTest in order to bring up whole spring context
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class RecipeServiceIT {
@@ -35,15 +36,19 @@ public class RecipeServiceIT {
     @Test
     public void testSaveOfDescription() throws Exception {
         //given
+        //gets all recipes created by bootstrap class
         Iterable<Recipe> recipes = recipeRepository.findAll();
+        //grabs first recipe from the iterable recipes
         Recipe testRecipe = recipes.iterator().next();
         RecipeCommand testRecipeCommand = recipeToRecipeCommand.convert(testRecipe);
 
         //when
+        //changing despcription and saving change
         testRecipeCommand.setDescription(NEW_DESCRIPTION);
         RecipeCommand savedRecipeCommand = recipeService.saveRecipeCommand(testRecipeCommand);
 
         //then
+        //validating the service saved the changes and returns the new command object
         assertEquals(NEW_DESCRIPTION, savedRecipeCommand.getDescription());
         assertEquals(testRecipe.getId(), savedRecipeCommand.getId());
         assertEquals(testRecipe.getCategories().size(), savedRecipeCommand.getCategories().size());

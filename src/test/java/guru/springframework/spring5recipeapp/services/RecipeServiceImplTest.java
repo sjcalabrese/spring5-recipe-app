@@ -59,11 +59,12 @@ public class RecipeServiceImplTest {
         HashSet recipeData = new HashSet();
         recipeData.add(recipe);
 
-        when(recipeService.getRecipes()).thenReturn(recipeData);
+        when(recipeRepository.findAll()).thenReturn(recipeData);
 
         Set<Recipe> recipes = recipeService.getRecipes();
 
         assertEquals(recipes.size(), 1);
+        //validating the findAll() method is only called once
         verify(recipeRepository, times(1)).findAll();
         verify(recipeRepository, never()).findById(anyLong());
     }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UnitOfMeasureCommandToUnitOfMeasure implements Converter<UnitOfMeasureCommand, UnitOfMeasure> {
+    //Spring does not guarentee this to be thread safe, hence using @Synchronized from project lombok
     @Synchronized
     @Nullable
     @Override

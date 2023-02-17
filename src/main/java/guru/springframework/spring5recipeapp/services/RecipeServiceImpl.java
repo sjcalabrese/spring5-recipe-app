@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-
+//SLF4j allows us to use a logger
 @Slf4j
 @Service
 public class RecipeServiceImpl implements RecipeService {
@@ -30,6 +30,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Set<Recipe> getRecipes() {
+        //Using the SLF4J logging utility
         log.debug("I'm in the Recipe Set service");
         Set<Recipe> recipeSet = new HashSet<>();
         recipeRepository.findAll().iterator().forEachRemaining(recipeSet::add);

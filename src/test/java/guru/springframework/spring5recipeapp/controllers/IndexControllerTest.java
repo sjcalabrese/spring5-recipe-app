@@ -48,13 +48,14 @@ public class IndexControllerTest {
         MockitoAnnotations.initMocks(this);
 
         indexController = new IndexController(recipeService);
+        //opens mock dispatcher servlett
         mockMvc = MockMvcBuilders.standaloneSetup(indexController).build();
     }
 
     @Test
     public void testMockMVC() throws Exception {
 
-
+        //used to test routing
        mockMvc.perform(get("/"))
                .andExpect(status().isOk())
                .andExpect(view().name("index"));
@@ -72,6 +73,7 @@ public class IndexControllerTest {
         recipes.add(recipe);
 
         when(recipeService.getRecipes()).thenReturn(recipes);
+        //creating argument captor for the set
         ArgumentCaptor<Set<Recipe>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
 
         //when
@@ -80,7 +82,9 @@ public class IndexControllerTest {
         //then
         assertEquals("index", viewName);
         verify(recipeService, times(1)).getRecipes();
+        //Capturing the set that is being passed
         verify(model, times(1)).addAttribute(eq("recipes"), argumentCaptor.capture());
+        //Validating the size of the set passed in the addAttribute method
         Set<Recipe> setInController = argumentCaptor.getValue();
         assertEquals(2, setInController.size());
     }

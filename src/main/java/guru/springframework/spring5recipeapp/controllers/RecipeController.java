@@ -20,6 +20,7 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
+    //Using @PathVariable allows us to pass the variable {id} in to the mapping
     @GetMapping("/recipe/{id}/show")
     public String showById(@PathVariable String id, Model model){
 
