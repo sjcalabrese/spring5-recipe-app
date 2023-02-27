@@ -70,7 +70,7 @@ public class RecipeControllerTest {
 
         mockMvc.perform(get("/recipe/asf/show"))
                 .andExpect(status().isBadRequest())
-                .andExpect(view().name("400Error"));
+                .andExpect(view().name("400error"));
     }
 
 
